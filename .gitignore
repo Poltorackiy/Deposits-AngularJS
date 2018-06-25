@@ -1,0 +1,16 @@
+
+.vs/Microservices.Deposits/DesignTimeBuild/.dtbcache
+bin/Debug/netcoreapp2.0/Microservices.Deposits.Response.deps.json
+bin/Debug/netcoreapp2.0/Microservices.Deposits.Response.dll
+bin/Debug/netcoreapp2.0/Microservices.Deposits.Response.pdb
+bin/Debug/netcoreapp2.0/Microservices.Deposits.Response.runtimeconfig.dev.json
+bin/Debug/netcoreapp2.0/Microservices.Deposits.Response.runtimeconfig.json
+obj/Debug/AssemblyReference.cache
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.AssemblyInfo.cs
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.AssemblyInfoInputs.cache
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.csproj.CoreCompileInputs.cache
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.csproj.FileListAbsolute.txt
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.csprojAssemblyReference.cache
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.dll
+obj/Debug/netcoreapp2.0/Microservices.Deposits.Response.pdb
+*.lock

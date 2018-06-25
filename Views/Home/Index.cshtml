@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div>
+        <h2>Депозиты</h2>
+    </div>
+    <div>
+        @if (!string.IsNullOrEmpty((string)ViewData["ErrorMessage"]))
+        {
+            <div style="color:red">
+                ViewData["ErrorMessage"];
+            </div>
+
+        }
+
+        @if (ViewBag.Deposits != null)
+        {
+            @using (Html.BeginForm("Payments", "Home", FormMethod.Post, new { id = "form-calc" }))
+            {
+                <div id="validatorMessage" style="color:red;">
+                    <label id="validationMessage"></label>
+                </div>
+                <p>
+                    @Html.DropDownList("guid", ViewBag.Deposits as SelectList);
+                </p>
+                <p><input type="text" name="months" id="months" placeholder="Срок вклада, мес." /></p>
+                <p><input type="text" name="initialAmount" id="amount" placeholder="Сумма вклада" /></p>
+                <p><input type="button" value="Рассчитать" onclick="validate()" /></p>
+            }
+
+        }
+
+
+    </div>
+    <script>
+        function validate(form) {
+            var form = document.getElementById("form-calc");
+            var months = document.getElementById("months").value;
+            var amount = document.getElementById("amount").value;
+            var label = document.getElementById("validatorMessage");
+
+            var reMonths = new RegExp("^[1-9]\\d*$");
+            if (!reMonths.test(months)) {
+                label.innerText = "Срок должен быть целым числом";
+            } else {
+                var reAmount = new RegExp("^([0-9]+(?:[\\,][0-9]*)?|\\,[0-9]+)$");
+                if (!reAmount.test(amount)) {
+                    label.innerText = "Сумма вклада должна быть целым числом с запятой";
+                } else {
+                    form.submit();
+                }
+            }
+        }
+
+    </script>
+    <script src="~/lib/jquery-ajax/jquery.unobtrusive-ajax.min.js"></script>
+</div>

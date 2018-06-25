@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Выплаты по вкладу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div><h2>График выплат</h2></div>
+@model Microservices.Deposits.Response.Models.DepositPaymentsCollection
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Сумма вклада
+            </th>
+            <th>
+                Проценты
+            </th>
+            <th>
+                Итого
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.InitialAmount
+            </td>
+            <td>
+                @Model.TotalPercents
+            </td>
+            <td>
+                @Model.TotalAmount
+            </td>
+        </tr>
+    </tbody>
+    </table>
+<h3>Выплаты</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Сумма вклада
+            </th>
+            <th>
+                Проценты
+            </th>
+            <th>
+                Итого
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DepositPayments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InitialAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
